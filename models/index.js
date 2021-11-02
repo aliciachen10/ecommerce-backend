@@ -17,24 +17,14 @@ Category.hasMany(Product, {
 
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
+  through: ProductTag,
   foreignKey: 'product_id'
 });
 
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
-  foreignKey: ''
-})
-Driver.hasOne(License, {
-  foreignKey: 'driver_id',
-  onDelete: 'CASCADE',
-});
-
-
-
-
-
-Car.belongsTo(Driver, {
-  foreignKey: 'driver_id',
+  through: ProductTag,
+  foreignKey: 'tag_id'
 });
 
 module.exports = {
