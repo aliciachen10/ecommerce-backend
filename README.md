@@ -2,11 +2,17 @@
 
 ## how to access and use this project
 This project is free and open source! To use this project, clone the project to your machine and follow the instructions in these two walkthrough videos:
+
 [walkthrough part 1](https://watch.screencastify.com/v/LSUUE27yv0zE4RZCjCBT)
+
 [walkthrough part 2](https://watch.screencastify.com/v/T4dkyz5aL43r5zl0Qf20)
-Note: your .env file should contain: 
+
+Note: your .env file should contain:
+
 DB_USER='root'
+
 DB_PW='YOUR PASSWORD'
+
 DB_NAME='ecommerce_db'
 
 ## purpose
