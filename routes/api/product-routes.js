@@ -72,7 +72,21 @@ router.post('/', (req, res) => {
 });
 
 // update product
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
+  try {
+    const productData = await Product.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!productData[0]) {
+      res.status(404).json({ message: 'No product with this id!' });
+      return;
+    }
+    res.status(200).json(productData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
   // update product data
   Product.update(req.body, {
     where: {
